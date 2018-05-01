@@ -1,0 +1,77 @@
+USB2311C.txt
+Created Mon Mar 26 15:43:20 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+USB2311C
+
+
+USB 3.1 Enhanced SuperSpeed Single port PCI Express Host Card
+with Type-C Receptacle
+
+make:        SUNIX Co., Ltd.
+model:       USB2311C
+sku:         SUN-USB2311C
+description: 1x type-c usb on PCIe 1x card
+             USB3.1 1-port PCIe Host Card with USB-C
+usb:         USB 3.1, 3.0, 2.0 & 1.1 devices (box)
+             USB port supplies +5VDC / 3000mA power (box)
+receptacle:  USB Type-C
+interface:   PCI Express Gen3.0, single-lane (x1) (box)
+made:        China
+price:       $14.98 (amazon prime - March 18, 2018)
+
+
+o PCI Express Base Specification Revision 3.0 single-lane ( x1).
+o Compliant with Universal Serial Bus 3.1 specification Gen2.
+o Compliant with xHCI (eXtensible Host Controller Interface)
+  specifications Revision 1.1.
+o Supports simultaneous operation of multiple USB 3.1, 3.0,
+  USB 2.0 and USB 1.1 devices.
+o Supports USB data transfer rate of 10G/5G/480/12/1.5 Mbps.
+o Expands single external USB 3.1 Super-Speed plus Type-C port
+  (DFP) on the system.
+o USB port supplies maximum +5VDC / 3000mA power output to USB device.
+o Built-in over current protection on each USB port.
+o Support device remote wakeup function from USB keyboard or mouse.
+o Hot-swapping feature allows connect/disconnect device without
+  powering down the system.
+o Driver supports for Microsoft Windows 7, 8.x and 10 operation systems.
+o Certified by Electromagnetic Compatibility (CE, FCC, VCCI, BSMI)
+and RoHS approval.
+--sunix.com
+
+
+From box:
+  USB2311C
+  USB3.1 1-port PCIe Host Card with USB-C
+  Receptacle / Std. Bracket
+  * PCI Express Gen3.0, single-lane (x1)
+  * Support USB 3.1, 3.0, 2.0 & 1.1 devices
+  * USB port supplies +5VDC / 3000mA power
+  * With low profile bracket accessory
+
+  Barcode:
+    4-715109-710441
+    1504001191
+
+
+Mon Mar 26 15:56:41 AKDT 2018
+=============================
+Installed SUNIX USB2311C PCIe single-lane (x1) USB Type-C
+in GCI covellite workstation.
+
+
+
+Links
+=====
+USB2311C
+USB 3.1 Enhanced SuperSpeed Single port PCI Express Host Card
+with Type-C Receptacle
+http://www.sunix.com/en/product_detail.php?cid=2&kid=34&gid=103&pid=1790
+
+USB 3.1 Enhanced SuperSpeed Single port PCI Express Host Card
+with Type-C Receptacle (USB2311C)
+price: $14.98 (amazon prime - March 18, 2018)
+https://www.amazon.com/Enhanced-SuperSpeed-Express-Receptacle-USB2311C/dp/B00XWTVFFA
+(END)
