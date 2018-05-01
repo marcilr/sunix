@@ -1,0 +1,20 @@
+links.txt
+Created Mon Mar 26 15:45:21 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+USB2311C related links
+
+
+Links
+=====
+USB2311C
+USB 3.1 Enhanced SuperSpeed Single port PCI Express Host Card
+with Type-C Receptacle
+http://www.sunix.com/en/product_detail.php?cid=2&kid=34&gid=103&pid=1790
+
+Sunix USB2311C USB3.1 Enhanced SuperSpeed
+Single port PCI Express Host Card with USB-C
+SKU: SUN-USB2311C
+http://www.anyware.com.au/sun-usb2311c.html
+
