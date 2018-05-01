@@ -1,0 +1,16 @@
+sunix.txt
+Created Mon Mar 26 15:38:19 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+SUNIX
+
+
+SUNIX DevicePort makes wiring simple and ensures clients
+never lose orders due to data lost when printing
+
+
+Links
+=====
+SUNIX
+http://www.sunix.com/en/product_page.php?id=1
