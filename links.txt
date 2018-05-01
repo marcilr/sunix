@@ -1,0 +1,17 @@
+links.txt
+Created Mon Mar 26 15:40:38 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+SUNIX Related links
+
+
+Links
+=====
+SUNIX
+http://www.sunix.com/en/product_page.php?id=1
+
+SUNIX USB2311C
+USB 3.1 Enhanced SuperSpeed Single port PCI Express Host Card
+with Type-C Receptacle
+http://www.sunix.com/en/product_detail.php?cid=2&kid=34&gid=103&pid=1790
