@@ -68,6 +68,30 @@ Tue Jul 10 09:33:33 AKDT 2018
 Working on access to Sandisk Ultra 64GB Dual Drive USB Type-C
 key attched ot the SUNIX USB2311C.
 
+
+Does your USB host controller have a driver in the kernel?
+----------------------------------------------------------
+covellite:~# lspci -d ::0c03 -k
+00:1a.0 USB controller: Intel Corporation 5 Series/3400 Series Chipset USB2 Enhanced Host C$
+        Subsystem: Intel Corporation 5 Series/3400 Series Chipset USB2 Enhanced Host Contro$
+        Kernel driver in use: ehci-pci
+        Kernel modules: ehci_pci
+00:1d.0 USB controller: Intel Corporation 5 Series/3400 Series Chipset USB2 Enhanced Host C$
+        Subsystem: Intel Corporation 5 Series/3400 Series Chipset USB2 Enhanced Host Contro$
+        Kernel driver in use: ehci-pci
+        Kernel modules: ehci_pci
+03:00.0 USB controller: ASMedia Technology Inc. ASM1142 USB 3.1 Host Controller
+        Subsystem: SUNIX Co., Ltd. ASM1142 USB 3.1 Host Controller
+        Kernel driver in use: xhci_hcd
+        Kernel modules: xhci_pci
+covellite:~#
+
+--How can I enable USB type C connectors on 15.10?
+  https://askubuntu.com/questions/714169/how-can-i-enable-usb-type-c-connectors-on-15-10
+
+Looks good.  Notice the SUNIX USB 3.1 Host Controller
+
+
 "You can check your USB devices with e.g. lsusb -t.  There
 should also be listed which driver is in use and at which
 speed the devices are connected."
@@ -181,6 +205,9 @@ in GCI covellite workstation.
 
 Links
 =====
+How can I enable USB type C connectors on 15.10?
+https://askubuntu.com/questions/714169/how-can-i-enable-usb-type-c-connectors-on-15-10
+
 How do I get usb 3.0 driver working or check that it is already working
 https://askubuntu.com/questions/729558/how-do-i-get-usb-3-0-driver-working-or-check-that-it-is-already-working
 
