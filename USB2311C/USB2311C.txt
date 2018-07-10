@@ -9,6 +9,10 @@ USB2311C
 The USB2311C is a PCIe x1 card that has one
 10Gbps USB 3.1 Type-c receptable.
 
+Should support Linux 2.6.31 or later (Linux OS already
+implemented USB3.0 driver)
+--pdf/153000131446011101268.pdf, p. 2
+
 USB 3.1 Enhanced SuperSpeed Single port PCI Express Host Card
 with Type-C Receptacle
 
