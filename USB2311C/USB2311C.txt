@@ -6,6 +6,11 @@ Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
 USB2311C
 
 
+NOTE: Unable to access Sandisk usb Type-c key via this
+      card under Debian 9.4 amd64 (July 10, 2018).
+      Key does not show in applications or under /dev/
+
+
 The USB2311C is a PCIe x1 card that has one
 10Gbps USB 3.1 Type-c receptable.
 
@@ -90,6 +95,12 @@ covellite:~$
 
 NOTE: Think the Driver=xhci_hcd/2p, 10000M is likely
       the 10Gbps SUNIX USB2311C receptacle.
+
+Inspect with usbview - USB device viewer graphical application:
+$ usbview
+
+This displays two xHCI host controllers with nothing attached.
+
 
 Check for xhci usb driver:
 
