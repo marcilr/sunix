@@ -68,7 +68,10 @@ Tue Jul 10 09:33:33 AKDT 2018
 Working on access to Sandisk Ultra 64GB Dual Drive USB Type-C
 key attched ot the SUNIX USB2311C.
 
-List USB devices:
+"You can check your USB devices with e.g. lsusb -t.  There
+should also be listed which driver is in use and at which
+speed the devices are connected."
+--askubuntu.com/questions/729558/how-do-i-get-usb-3-0-driver-working-or-check-that-it-is-already-working/729565
 
 covellite:~$ lsusb -t
 /:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=ehci-pci/2p, 480M
@@ -81,7 +84,7 @@ covellite:~$ lsusb -t
             |__ Port 2: Dev 5, If 0, Class=Human Interface Device, Driver=usbhid, 12M
             |__ Port 2: Dev 5, If 1, Class=Human Interface Device, Driver=usbhid, 12M
             |__ Port 2: Dev 5, If 2, Class=Human Interface Device, Driver=usbhid, 12M
-/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/2p, 10000M
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/2p, 10000M                   <===
 /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/2p, 480M
 covellite:~$ 
 
@@ -109,6 +112,64 @@ xhci_hcd 188416 1 xhci_pci, Live 0xffffffffc0503000
 usbcore 253952 7 uas,usb_storage,usbhid,xhci_pci,xhci_hcd,ehci_pci,ehci_hcd, Live 0xffffffffc037d000
 covellite:~$ 
 
+covellite:~# locate xhci
+/lib/modules/4.9.0-4-amd64/kernel/drivers/usb/host/xhci-hcd.ko
+/lib/modules/4.9.0-4-amd64/kernel/drivers/usb/host/xhci-pci.ko
+/lib/modules/4.9.0-6-amd64/kernel/drivers/usb/host/xhci-hcd.ko
+/lib/modules/4.9.0-6-amd64/kernel/drivers/usb/host/xhci-pci.ko
+/usr/src/linux-headers-4.9.0-4-amd64/include/config/usb/xhci
+/usr/src/linux-headers-4.9.0-4-amd64/include/config/usb/xhci/hcd.h
+/usr/src/linux-headers-4.9.0-4-amd64/include/config/usb/xhci/pci.h
+/usr/src/linux-headers-4.9.0-6-amd64/include/config/usb/xhci
+/usr/src/linux-headers-4.9.0-6-amd64/include/config/usb/xhci/hcd.h
+/usr/src/linux-headers-4.9.0-6-amd64/include/config/usb/xhci/pci.h
+covellite:~#
+
+Looks like the xhci_hcd driver is in use:
+  covellite:~# lspci -v | grep xhci
+        Kernel driver in use: xhci_hcd
+        Kernel modules: xhci_pci
+  covellite:~# 
+
+
+covellite:~# lsusb
+Bus 004 Device 002: ID 8087:0020 Intel Corp. Integrated Rate Matching Hub
+Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 005: ID 046d:c52b Logitech, Inc. Unifying Receiver
+Bus 003 Device 004: ID 04fe:0006 PFU, Ltd 
+Bus 003 Device 003: ID 04fe:0008 PFU, Ltd 
+Bus 003 Device 010: ID 0781:5597 SanDisk Corp. 
+Bus 003 Device 002: ID 8087:0020 Intel Corp. Integrated Rate Matching Hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+covellite:~#
+
+covellite:~# lsusb -v | grep -E '\<(Bus|iProduct|bDeviceClass|bDeviceProtocol)' 2>/dev/null
+...
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+  bDeviceClass            9 Hub
+  bDeviceProtocol         3 
+  iProduct                2 xHCI Host Controller
+...
+covellite:~#
+
+--wiki.debian.org/HowToIdentifyADevice/USB
+
+
+From correlating to 'lsusb -t' output I think
+"Bus 002 Device 001: ID 1d6b:0003" has to be the Sandisk 10Gbps key.
+
+covellite:~#  dmesg | grep xhc
+[    1.354891] xhci_hcd 0000:03:00.0: xHCI Host Controller
+[    1.354898] xhci_hcd 0000:03:00.0: new USB bus registered, assigned bus number 1
+[    1.413847] xhci_hcd 0000:03:00.0: hcc params 0x0200eec1 hci version 0x110 quirks 0x00000010
+[    1.414275] usb usb1: Manufacturer: Linux 4.9.0-6-amd64 xhci-hcd
+[    1.414799] xhci_hcd 0000:03:00.0: xHCI Host Controller
+[    1.414807] xhci_hcd 0000:03:00.0: new USB bus registered, assigned bus number 2
+[    1.414812] xhci_hcd 0000:03:00.0: Host supports USB 3.1 Enhanced SuperSpeed
+[    1.414920] usb usb2: Manufacturer: Linux 4.9.0-6-amd64 xhci-hcd
+covellite:~#
 
 
 Mon Mar 26 15:56:41 AKDT 2018
@@ -122,6 +183,9 @@ Links
 =====
 How do I get usb 3.0 driver working or check that it is already working
 https://askubuntu.com/questions/729558/how-do-i-get-usb-3-0-driver-working-or-check-that-it-is-already-working
+
+HowToIdentifyADevice USB
+https://wiki.debian.org/HowToIdentifyADevice/USB
 
 Linux: Find out what kernel drivers (modules) are loaded
 last updated January 3, 2017
