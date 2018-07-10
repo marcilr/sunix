@@ -6,6 +6,9 @@ Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
 USB2311C
 
 
+The USB2311C is a PCIe x1 card that has one
+10Gbps USB 3.1 Type-c port.  
+
 USB 3.1 Enhanced SuperSpeed Single port PCI Express Host Card
 with Type-C Receptacle
 
