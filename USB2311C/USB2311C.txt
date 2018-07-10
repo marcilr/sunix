@@ -78,6 +78,9 @@ should also be listed which driver is in use and at which
 speed the devices are connected."
 --askubuntu.com/questions/729558/how-do-i-get-usb-3-0-driver-working-or-check-that-it-is-already-working/729565
 
+Nice graphical usb inspection tool:
+  covellite:~$ usbview
+
 covellite:~$ lsusb -t
 /:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=ehci-pci/2p, 480M
     |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/8p, 480M
